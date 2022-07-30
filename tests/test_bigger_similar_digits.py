@@ -1,6 +1,6 @@
 import unittest
 
-from src.bigger_number2 import next_bigger
+from bigger_number3 import next_bigger
 
 
 class TesttBiggerSimilarDigits(unittest.TestCase):

@@ -6,11 +6,31 @@ def next_bigger(number: int) -> int:
 
     print(f"nums: {nums}")
     print(f"left_index: {left_index}")
+
+    """ 
+    Example: 3142
+        LI = 4-2=2
+            LI[2+1] = 2
+            LT[2] = 4
+            Less than equal? YES
+                LI = 2-1=1
+         
+        LI[1] = 2   
+        LT[1+1] = 4
+        Less than equal? YES
+            LI = 1-1=0
+    """
     while left_index >= 0 and nums[left_index + 1] <= nums[left_index]:
         print(
             f"left_index: {left_index}; nums[left_index + 1]: {nums[left_index + 1]}; nums[left_index]: {nums[left_index]}"
         )
         left_index -= 1
+
+    """ 
+    RI = len(nums)-1 = 4-3  = 3
+    
+    RI[3] M= 
+    """
 
     if left_index >= 0:
         right_index = len(nums) - 1
@@ -25,8 +45,7 @@ def next_bigger(number: int) -> int:
             f"swapping; right_index: {right_index} ({nums[right_index]}); left_index: {left_index} ({nums[left_index]})"
         )
         swap_number(nums, right_index, left_index)
-
-    print(f"reversing")
+    print(f"reversing {nums}, starting from {left_index + 1}")
     reverse(nums, left_index + 1)
 
     answer = int("".join(nums))
